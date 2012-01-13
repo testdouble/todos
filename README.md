@@ -16,6 +16,7 @@ other forks of the repo.
   * [ember.js](http://emberjs.com/)
   * [batman.js](http://batmanjs.org/)
   * [spine.js](http://spinejs.com/)
+  * [angular.js](http://angularjs.org/#/)
   * [JavaScriptMVC](http://javascriptmvc.com/)
 
 2. Load the JavaScripts you'll need in `index.html`
