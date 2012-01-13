@@ -17,7 +17,7 @@ window.todoAppDriver = {
 };
 
 $(function() {
-  describe("A humble to-do application", function() {
+  describe("A humble to-do application", function() {    
     describe("adding a todo", function() {
       var TODO_TEXT = "hug Matt Yoho";
       beforeEach(function() {
@@ -69,6 +69,10 @@ $(function() {
           return this.actual === todoAppDriver.readLastTodo();
         }
       });
+    });
+    
+    afterEach(function(){
+      $('#new-todo').val('')
     });
   });
 
