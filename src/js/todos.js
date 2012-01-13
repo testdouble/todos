@@ -5,6 +5,8 @@
 
 // Load the application once the DOM is ready, using `jQuery.ready`:
 $(function(){
+  $('body').append($('#app-template').html())
+
 
   // Todo Model
   // ----------
