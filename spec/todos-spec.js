@@ -1,70 +1,81 @@
 window.context = window.describe;
 
+window.todoAppDriver = {
+  createTodo: function(text) {
+    $('#new-todo').val(text).trigger(
+      jQuery.Event("keypress", { keyCode: 13 })
+    );
+  },
+  readLastTodo: function() {
+    return $('.todo-text:last').text();
+  },
+  editLastTodo: function(newText) {
+    $('.todo-text:last').trigger("dblclick");
+    $('.todo-input:last').val(newText).trigger('blur');
+  },
+  deleteLastTodo: function() {
+    $('.todo-destroy:last').trigger('click');
+  }
+};
+
 $(function() {
-  beforeEach(function() {
-    this.addMatchers({
-      toBeTheLastTodo: function() {
-        return this.actual === $('.todo-text:last').text();
-      }
-    });
-  });
-
-  describe("Todo app functional test", function() {
-
+  describe("A humble to-do application", function() {
     describe("adding a todo", function() {
       var TODO_TEXT = "hug Matt Yoho";
       beforeEach(function() {
-        createTodo(TODO_TEXT);
-      });
-      afterEach(function() {
-        deleteLastTodo();
+        todoAppDriver.createTodo(TODO_TEXT);
       });
 
       it("adds a todo", function() {
         expect(TODO_TEXT).toBeTheLastTodo();
       });
 
+      afterEach(function() {
+        todoAppDriver.deleteLastTodo();
+      });
     });
 
     describe("editing a todo", function() {
       var NEW_TEXT = "drink Marc Peabody's ale";
       beforeEach(function() {
-        createTodo("drink Bud Light");
-        $('.todo-text:last').trigger("dblclick");
-        $('.todo-input:last').val(NEW_TEXT).trigger('blur');
-      });
-      afterEach(function() {
-        deleteLastTodo();
+        todoAppDriver.createTodo("drink Bud Light");
+
+        todoAppDriver.editLastTodo(NEW_TEXT);
       });
 
       it("edits the todo", function() {
         expect(NEW_TEXT).toBeTheLastTodo();
       });
+
+      afterEach(function() {
+        todoAppDriver.deleteLastTodo();
+      });
     });
 
     describe("deleting a todo", function() {
-      var DO_NOT_WANT="Exercise and eat right.";
+      var DO_NOT_WANT="eat right and exercise";
       beforeEach(function() {
-        createTodo(DO_NOT_WANT);
-        deleteLastTodo();
+        todoAppDriver.createTodo(DO_NOT_WANT);
+
+        todoAppDriver.deleteLastTodo();
       });
 
       it("deletes the todo", function() {
         expect(DO_NOT_WANT).not.toBeTheLastTodo();
       });
     });
+
+    beforeEach(function() {
+      this.addMatchers({
+        toBeTheLastTodo: function() {
+          return this.actual === todoAppDriver.readLastTodo();
+        }
+      });
+    });
   });
 
-  var createTodo = function(text) {
-    var $input = $('#new-todo');
-    $input.val(text).trigger(jQuery.Event("keypress", { keyCode: 13 }));
-  };
 
-  var deleteLastTodo = function() {
-    $('.todo-destroy:last').trigger('click');
-  };
-
-
+  //This is just the standard boiler-plate to execute a Jasmine spec runner
   var kickOffJasmine = (function() {
     var jasmineEnv = jasmine.getEnv();
     jasmineEnv.updateInterval = 1000;
