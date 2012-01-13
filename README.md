@@ -27,7 +27,7 @@ other forks of the repo.
     get at the default HTML template for the main application view, you might do this with jQuery:
 
     ``` javascript
-    $('#app-template').html();
+    $('#item-template').html();
     ```
 
     From that point, most JavaScript app frameworks have a facility or convention for applying client-side templates.
