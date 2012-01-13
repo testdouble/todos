@@ -5,15 +5,6 @@ tool-of-choice for building To-Do applications on the web. This is a contest to 
 with the **application framework of your choice**, and then compare and contrast with other forks of the
 project.
 
-The repo comes with the web assets from [Jérôme Gravel-Niquet](http://jgn.me/)'s
-[Todo List example](http://documentcloud.github.com/backbone/examples/todos/index.html) for
-[backbone.js](http://documentcloud.github.com/backbone).
-
-HTML templates are provided in `<script>` tags in `index.html` & some CSS is provided. The page
-also includes some characterization tests written in Jasmine and an embedded test runner. When the
-specs run green, you're done! (While the tests all pass for Jérôme's application, you may need to overwrite
-some of the methods in `window.todoAppDriver` for the specs to exercise your application properly.)
-
 ## Instructions
 
 1. Pick an app framework to use. Here are some frameworks you might try to implement this in:
@@ -50,3 +41,9 @@ version of the app.
 
 With the fresh hindsight of your own experience, check out how others implemented their applications by
 pulling down other forks of this repo.
+
+### Thanks
+
+The repo comes with the web assets from [Jérôme Gravel-Niquet](http://jgn.me/)'s
+[Todo List example](http://documentcloud.github.com/backbone/examples/todos/index.html) for
+[backbone.js](http://documentcloud.github.com/backbone).
