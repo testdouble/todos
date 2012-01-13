@@ -20,27 +20,27 @@ project.
 
 3. Hack-hack-hack in `src/js/todos.js`.
 
-You'll noticed that client-side HTML templates are provided in `<script>` tags in `index.html`. To
-get at the default HTML template for the main application view, you might do this with jQuery:
+  You'll noticed that client-side HTML templates are provided in `<script>` tags in `index.html`. To
+  get at the default HTML template for the main application view, you might do this with jQuery:
 
-``` javascript
-$('#app-template').html();
-```
+  ``` javascript
+  $('#app-template').html();
+  ```
 
 4. Make the specs pass
 
-There are Jasmine specs included (you'll probably have noticed the runner output on the bottom of the page).
-Prove your implementation is the greatest by making them go green! You can find the specs in `spec/todos-spec.js`
+  There are Jasmine specs included (you'll probably have noticed the runner output on the bottom of the page).
+  Prove your implementation is the greatest by making them go green! You can find the specs in `spec/todos-spec.js`
 
-At the top of the spec file, there's a `window.todoAppDriver` that defines a few methods for interacting with
-the application. These work for Jérôme's backbone.js example, but your mileage may vary. Feel free to override
-those methods as necessary so that the specs know how to create, read, update, and delete to-dos in your
-version of the app.
+  At the top of the spec file, there's a `window.todoAppDriver` that defines a few methods for interacting with
+  the application. These work for Jérôme's backbone.js example, but your mileage may vary. Feel free to override
+  those methods as necessary so that the specs know how to create, read, update, and delete to-dos in your
+  version of the app.
 
 5. Compare your results!
 
-With the fresh hindsight of your own experience, check out how others implemented their applications by
-pulling down other forks of this repo.
+  With the fresh hindsight of your own experience, check out how others implemented their applications by
+  pulling down other forks of this repo.
 
 ### Thanks
 
