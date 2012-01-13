@@ -1,5 +1,3 @@
-window.context = window.describe;
-
 window.todoAppDriver = {
   createTodo: function(text) {
     $('#new-todo').val(text).trigger(
